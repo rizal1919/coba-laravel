@@ -11,4 +11,9 @@ class Post extends Model
 
     // protected $fillable = ['title', 'excerpt', 'body'];
     protected $guarded = ['id'];
+
+    // nama method nya itu sama dengan nama modelnya
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
 }

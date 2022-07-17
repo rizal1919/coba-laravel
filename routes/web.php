@@ -1,8 +1,10 @@
 <?php
 
 use App\Models\Post;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+
 
 
 /*
@@ -38,3 +40,20 @@ Route::get('/blog', [PostController::class, 'index']);
 Route::get('blog/{post:slug}', [PostController::class, 'show']);
 // kalau kalian nulis post saja, maka dia akan mengirimkan id saja secara default.
 // tapi kalau ditambahin :slug, maka slug lah yang akan dikueri
+Route::get('categories/', function() {
+    return view('categories', [
+        'title' => 'Categories Posts',
+        'categories' => Category::all()
+    ]);
+});
+
+Route::get('categories/{category:slug}', function(Category $category){
+
+    return view('category', [
+
+        'title' => $category->name,
+        'posts' => $category->posts,
+        'category' => $category->name
+    ]);
+
+});

@@ -7,13 +7,19 @@
     <title>Document</title>
 </head>
 <body>
+    <p></p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam iusto veniam culpa velit non deserunt dolorum hic labore dolorem repudiandae. Reprehenderit, facere aut. Nemo dolor porro consequatur aspernatur consectetur tempore non, deleniti laborum cum necessitatibus nesciunt quidem repudiandae voluptatibus sapiente quod id, tempora similique minima veniam?</p><p> Beatae nulla dicta, incidunt adipisci inventore dolorum? Sequi, iusto nemo! Debitis deleniti eius expedita accusamus ut recusandae, aut maiores quis aliquam, inventore deserunt, suscipit facere illo! Omnis asperiores sint placeat, repellat fugit nesciunt tenetur commodi sit. Ab blanditiis, consequuntur odit alias at optio excepturi esse eius? Aperiam ducimus sequi officiis minus blanditiis nihil iusto dolorem, cum ratione laboriosam exercitationem quia aut praesentium voluptatibus. Rem nihil quo unde rerum, eos nobis amet quam architecto recusandae reiciendis ratione aliquid fuga hic, debitis tempora a accusantium et vero! Rerum consequuntur maiores reprehenderit dignissimos neque, aliquam consequatur et laudantium est qui totam, quidem ipsam quis? Et, cumque aperiam?</p>
+
+    Category::create([
+        'name' => 'Personal',
+        'slug' => 'personal'
+    ])
 
     Post::create([
-        'title' => 'Third Notes',
-        'slug' => 'third-notes',
-        'excerpt' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum doloremque alias a quasi nulla facilis harum nostrum aut eius, repellat modi ad eum, blanditiis sint in animi similique voluptate hic!',
-        'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem enim, reprehenderit, pariatur, necessitatibus cum quos placeat adipisci accusantium delectus atque fuga. Minus soluta reprehenderit doloribus, asperiores consectetur alias! Doloribus nobis autem accusamus eveniet placeat et harum similique alias sit aliquid, iusto rem asperiores reiciendis necessitatibus assumenda dolorum ipsum velit neque facilis consectetur officia. Quas possimus veniam, quisquam hic adipisci doloribus voluptatum laudantium iusto cupiditate exercitationem culpa! Eligendi, omnis. Eaque quidem aperiam similique fugit eum veritatis perspiciatis ab amet. Quasi asperiores doloremque ut eligendi cupiditate culpa ullam, amet, porro, accusamus provident tempore in perferendis! Unde aliquam architecto nobis pariatur sint quos.'
-    
+        'title' => 'Kedua',
+        'category_id' => 1,
+        'excerpt' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam iusto veniam culpa velit non deserunt dolorum hic labore dolorem repudiandae. Reprehenderit, facere aut. Nemo dolor porro consequatur aspernatur consectetur tempore non, deleniti laborum cum necessitatibus nesciunt quidem repudiandae voluptatibus sapiente quod id, tempora similique minima veniam?',
+        'slug' => 'personal',
+        'body' => '<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam iusto veniam culpa velit non deserunt dolorum hic labore dolorem repudiandae. Reprehenderit, facere aut. Nemo dolor porro consequatur aspernatur consectetur tempore non, deleniti laborum cum necessitatibus nesciunt quidem repudiandae voluptatibus sapiente quod id, tempora similique minima veniam?</p><p> Beatae nulla dicta, incidunt adipisci inventore dolorum? Sequi, iusto nemo! Debitis deleniti eius expedita accusamus ut recusandae, aut maiores quis aliquam, inventore deserunt, suscipit facere illo! Omnis asperiores sint placeat, repellat fugit nesciunt tenetur commodi sit. Ab blanditiis, consequuntur odit alias at optio excepturi esse eius? Aperiam ducimus sequi officiis minus blanditiis nihil iusto dolorem, cum ratione laboriosam exercitationem quia aut praesentium voluptatibus. Rem nihil quo unde rerum, eos nobis amet quam architecto recusandae reiciendis ratione aliquid fuga hic, debitis tempora a accusantium et vero! Rerum consequuntur maiores reprehenderit dignissimos neque, aliquam consequatur et laudantium est qui totam, quidem ipsam quis? Et, cumque aperiam?</p>'
     ])
     
     

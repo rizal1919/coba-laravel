@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->foreignId('category_id');
             $table->text('excerpt');
             // untuk menyimpan sebagian kecil tulisan
             // pake text karna ukurannya pasti besar > 255 character

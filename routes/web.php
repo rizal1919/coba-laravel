@@ -53,6 +53,11 @@ Route::get('categories/{category:slug}', function(Category $category){
 
         'title' => $category->name,
         'posts' => $category->posts,
+        // $category->posts itu ngambil dari Model Category yang ada hasMany nya zal. jadi dia masukin method posts nya.
+        // kenapa dia bisa ngambil? ya karna relational database nya sudah terhubung di Post.php model tadi yang ada belongsTo nya zal
+        // public function category(){
+        //     return $this->belongsTo(Category::class);
+        // }
         'category' => $category->name
     ]);
 

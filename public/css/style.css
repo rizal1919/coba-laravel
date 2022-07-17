@@ -39,6 +39,7 @@ body{
 .nav a:hover{
 	border-bottom: 2px solid white;
 	font-weight: bold;
+	color:greenyellow;
 }
 
 .nav a:active{

@@ -1,6 +1,6 @@
 <?php 
 
-// header("refresh: 2");
+header("refresh: 2");
 
 ?>
 <!DOCTYPE html>
@@ -13,6 +13,9 @@
 </head>
 <body>
 	@include('partials/navbar')
-	@yield('container')
+	<div class="body">
+		@yield('container')
+	</div>
+
 </body>
 </html>

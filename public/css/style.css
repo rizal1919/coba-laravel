@@ -8,6 +8,10 @@ a{
 	color: white;
 }
 
+a:hover{
+	font-weight: bold;
+}
+
 body{
 	background-color: royalblue;
 	padding: 20px;
@@ -34,4 +38,9 @@ body{
 
 .nav a:hover{
 	border-bottom: 2px solid white;
+	font-weight: bold;
+}
+
+.nav a:active{
+	background-color:darkgoldenrod;
 }

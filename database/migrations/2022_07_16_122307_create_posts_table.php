@@ -17,6 +17,11 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->foreignId('category_id');
+            // untuk relasi ke Category
+
+            $table->foreignId('user_id');
+            // untuk relasi ke User
+
             $table->text('excerpt');
             // untuk menyimpan sebagian kecil tulisan
             // pake text karna ukurannya pasti besar > 255 character

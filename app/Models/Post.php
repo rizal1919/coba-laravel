@@ -15,5 +15,11 @@ class Post extends Model
     // nama method nya itu sama dengan nama modelnya
     public function category(){
         return $this->belongsTo(Category::class);
+        // 1 post itu setidaknya memiliki 1 category
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class);
+        // 1 post setidaknya dimiliki oleh satu penulis
     }
 }

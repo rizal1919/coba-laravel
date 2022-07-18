@@ -1,6 +1,6 @@
 <?php 
 
-header("refresh: 2");
+// header("refresh: 2");
 
 ?>
 <!DOCTYPE html>

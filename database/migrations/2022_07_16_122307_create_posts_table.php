@@ -16,19 +16,20 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->foreignId('category_id');
-            // untuk relasi ke Category
-
-            $table->foreignId('user_id');
-            // untuk relasi ke User
+            $table->string('slug')->unique;
 
             $table->text('excerpt');
             // untuk menyimpan sebagian kecil tulisan
             // pake text karna ukurannya pasti besar > 255 character
 
-            $table->string('slug')->unique;
-
             $table->text('body');
+
+            $table->foreignId('user_id');
+            // untuk relasi ke User
+
+            $table->foreignId('category_id');
+            // untuk relasi ke Category
+           
             $table->timestamp('published_at')->nullable;
             // nullable berarti boleh kosong
 

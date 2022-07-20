@@ -1,4 +1,4 @@
-@extends('layouts/main')
+@extends('layouts.main')
 
 @section('container')
 	<h1 class="big-title">Halaman About</h1>

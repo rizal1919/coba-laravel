@@ -9,8 +9,9 @@ class PostController extends Controller
 {
     public function index(){
         return view('blog', [
-            "title" => "Halaman Posts",
-            "posts" => Post::with(['user', 'category'])->latest()->get()
+            "title" => "Posts",
+            "posts" => Post::latest()->get()
+            // "posts" => Post::with(['author','category'])->latest()->get()
             // mencari postingan terakhir
         ]);
     }

@@ -9,7 +9,8 @@ class PostController extends Controller
 {
     public function index(){
         return view('blog', [
-            "title" => "Posts",
+            "active" => "posts",
+            'title' => 'posts',
             "posts" => Post::latest()->get()
             // "posts" => Post::with(['author','category'])->latest()->get()
             // mencari postingan terakhir
@@ -20,7 +21,7 @@ class PostController extends Controller
         // dia menggunakan konsep Route Model Binding, jadi diikat gitulah
         // ngirimin model kesini, diiket disini
         return view('miniblog', [
-            "title" => "Halaman",
+            "active" => "posts",
             "new_post" => $post
         ]);
     }

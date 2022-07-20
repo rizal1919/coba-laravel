@@ -16,15 +16,17 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
+    {   
+        User::Create([
+            'name' => 'Rizal Fathurrahman',
+            'username' => 'rizalfathurr',
+            'email' => 'rizal@gmail.com',
+            'password' => bcrypt('12345')
+        ]);
         \App\Models\User::factory(3)->create();
         // sebuah fitur untuk mengengerate data palsu
 
-        // User::Create([
-        //     'name' => 'Rizal Fathurrahman',
-        //     'email' => 'rizal@gmail.com',
-        //     'password' => bcrypt('12345')
-        // ]);
+        
 
         // User::Create([
         //     'name' => 'Okky Prastyo',
@@ -35,6 +37,11 @@ class DatabaseSeeder extends Seeder
         Category::Create([
             'name' => 'Web Programming',
             'slug' => 'web-programming'
+        ]);
+
+        Category::Create([
+            'name' => 'College Student',
+            'slug' => 'college-student'
         ]);
 
         Category::Create([

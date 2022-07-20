@@ -21,7 +21,8 @@ use App\Http\Controllers\PostController;
 
 Route::get('/', function () {
     return view('home', [
-    	"title" => "Home"
+    	"title" => "Home",
+        'active' => 'Home'
     ]);
 });
 
@@ -29,6 +30,8 @@ Route::get('/about', function () {
     return view('about', [
     	"title" => "About",
     	"name" =>  "Rizal Fathurrahman",
+        'active' => 'About',
+        "location" => "Gresik, Indonesia",
     	"email" => "hirizal@student.ittelkom-sby.ac.id"
     ]);
 });
@@ -44,6 +47,7 @@ Route::get('blog/{post:slug}', [PostController::class, 'show']);
 Route::get('categories/', function() {
     return view('categories', [
         'title' => 'Categories Posts',
+        'active' => 'Category',
         'categories' => Category::all()
     ]);
 });
@@ -53,6 +57,7 @@ Route::get('categories/{category:slug}', function(Category $category){
     return view('blog', [
 
         'title' => "Post By Category : $category->name",
+        'active' => 'Category',
         'posts' => $category->posts->load('category','user')
         // $category->posts itu ngambil dari Model Category yang ada hasMany nya zal. jadi dia masukin method posts nya.
         // kenapa dia bisa ngambil? ya karna relational database nya sudah terhubung di Post.php model tadi yang ada belongsTo nya zal
@@ -67,6 +72,7 @@ Route::get('authors/{user:username}', function(User $user) {
 
     return view('blog', [
         'title' => "Post By Author : $user->name",
+        'active' => 'Category',
         'posts' => $user->posts->load('category','user')
     ]);
 });

@@ -7,6 +7,12 @@
 <div class="row justify-content-center mt-5">
 	<div class="col-md-6">
 		<form action="/blog">
+		@if(request('category'))
+			<input type="hidden" name="category" value="{{ request('category') }}">
+		@endif
+		@if(request('user'))
+			<input type="hidden" name="user" value="{{ request('user') }}">
+		@endif
 		<div class="input-group">
 			<input type="text" class="form-control" value="{{ request()->search }}" placeholder="Search" name="search">
 			<button class="btn btn-danger" type="submit">Search</button>
@@ -51,7 +57,7 @@
     <h3 class="card-title" style="text-transform: uppercase;"><a class="text-decoration-none text-dark" href="/blog/{{ $posts[0]->slug }}">{{ $posts[0]->title }}</a></h3>
 	<p style="letter-spacing: 0.5px;">
 		<small class="text-muted">
-		By.<a class="mx-1" href="/authors/{{ $posts[0]->user->username }}">{{ $posts[0]->user->name }}</a> in <a class="mx-1" href="/categories/{{ $posts[0]->category->slug }}">{{ $posts[0]->category->name }}</a>{{ $posts[0]->created_at->diffForHumans() }}
+		By.<a class="mx-1" href="/blog?user={{ $posts[0]->user->username }}">{{ $posts[0]->user->name }}</a> in <a class="mx-1" href="/blog?category={{ $posts[0]->category->slug }}">{{ $posts[0]->category->name }}</a>{{ $posts[0]->created_at->diffForHumans() }}
 		</small>
 	</p>
     
@@ -66,12 +72,12 @@
 	@foreach( $posts->skip(1) as $post)
 		<div class="col-md-4 mb-3">
 			<div class="card">
-				<div class="position-absolute px-3 py-2" style="background-color: rgba(0,0,0,0.7);"><a  class="text-white text-decoration-none" href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a></div>
+				<div class="position-absolute px-3 py-2" style="background-color: rgba(0,0,0,0.7);"><a  class="text-white text-decoration-none" href="/blog?category={{ $post->category->slug }}">{{ $post->category->name }}</a></div>
 				<img src="https://source.unsplash.com/500x500?{{ $post->category->name }}" class="card-img-top" alt="{{ $post->category->name }}">
 				<div class="card-body">
 					<h5 class="card-title">{{ $post->title }}</h5>
 					<p>By. 
-						<a class="mx-1" href="/authors/{{ $post->user->username }}">{{ $post->user->name }}</a>{{ $post->created_at->diffForHumans() }}
+						<a class="mx-1" href="/blog?user={{ $post->user->username }}">{{ $post->user->name }}</a>{{ $post->created_at->diffForHumans() }}
 					</p>
 					<p class="card-text">{{ $post->excerpt }}</p>
 					<a href="/blog/{{ $post->slug }}" class="btn btn-primary">Read more</a>
@@ -83,6 +89,10 @@
 	</div>
 </div>
 @else
-<p class="text-center fs-4">No posts found.</p>
+<p class="text-center fs-4 my-5">No posts found.</p>
 @endif
+<div class="row justify-content-center my-5">
+{{ $posts->links() }}
+</div>
+
 @endsection

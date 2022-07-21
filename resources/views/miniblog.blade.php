@@ -7,7 +7,7 @@
 		<div class="col-md-8 text-justify">
 			<h2 style="text-transform: uppercase;">{{ $new_post->title }}</h2>
 			<br>
-			<p>by {{ $new_post->user->name }} in <a href="/categories/{{ $new_post->category->slug }}">{{ $new_post->category->name }}</a></p>
+			<p>by <a href="/blog?user={{ $new_post->user->username }}">{{ $new_post->category->name }}</a> in <a href="/blog?category={{ $new_post->category->slug }}">{{ $new_post->category->name }}</a></p>
 			<!-- <p>{{ $new_post->body }}</p> -->
 			<!-- gunanya untuk meng-escape tag html -->
 			

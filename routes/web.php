@@ -52,27 +52,27 @@ Route::get('categories/', function() {
     ]);
 });
 
-Route::get('categories/{category:slug}', function(Category $category){
+// Route::get('categories/{category:slug}', function(Category $category){
 
-    return view('blog', [
+//     return view('blog', [
 
-        'title' => "Post By Category : $category->name",
-        'active' => 'Category',
-        'posts' => $category->posts->load('category','user')
-        // $category->posts itu ngambil dari Model Category yang ada hasMany nya zal. jadi dia masukin method posts nya.
-        // kenapa dia bisa ngambil? ya karna relational database nya sudah terhubung di Post.php model tadi yang ada belongsTo nya zal
-        // public function category(){
-        //     return $this->belongsTo(Category::class);
-        // }
-    ]);
+//         'title' => "Post By Category : $category->name",
+//         'active' => 'Category',
+//         'posts' => $category->posts->load('category','user')
+//         // $category->posts itu ngambil dari Model Category yang ada hasMany nya zal. jadi dia masukin method posts nya.
+//         // kenapa dia bisa ngambil? ya karna relational database nya sudah terhubung di Post.php model tadi yang ada belongsTo nya zal
+//         // public function category(){
+//         //     return $this->belongsTo(Category::class);
+//         // }
+//     ]);
 
-});
+// });
 
-Route::get('authors/{user:username}', function(User $user) {
+// Route::get('authors/{user:username}', function(User $user) {
 
-    return view('blog', [
-        'title' => "Post By Author : $user->name",
-        'active' => 'Category',
-        'posts' => $user->posts->load('category','user')
-    ]);
-});
+//     return view('blog', [
+//         'title' => "Post By Author : $user->name",
+//         'active' => 'Category',
+//         'posts' => $user->posts->load('category','user')
+//     ]);
+// });

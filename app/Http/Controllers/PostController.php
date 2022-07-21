@@ -49,7 +49,7 @@ class PostController extends Controller
         }
 
         return view('blog', [
-            "active" => "posts",
+            "active" => "Posts",
             'title' => 'All Posts' . $title,
 
             // ->filter() itu diambil dari model post yang di bag. scopeFilter()
@@ -65,7 +65,7 @@ class PostController extends Controller
         // dia menggunakan konsep Route Model Binding, jadi diikat gitulah
         // ngirimin model kesini, diiket disini
         return view('miniblog', [
-            "active" => "posts",
+            "active" => "Posts",
             "title" => 'Miniblog',
             "new_post" => $post
         ]);

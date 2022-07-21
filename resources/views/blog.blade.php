@@ -3,7 +3,17 @@
 
 
 @section('container')
-<h1>Halaman {{ $title }}</h1>
+<h1 class="text-center">{{ $title }}</h1>
+<div class="row justify-content-center mt-5">
+	<div class="col-md-6">
+		<form action="/blog">
+		<div class="input-group">
+			<input type="text" class="form-control" value="{{ request()->search }}" placeholder="Search" name="search">
+			<button class="btn btn-danger" type="submit">Search</button>
+		</div>
+		</form>
+	</div>
+</div>
 <!-- @if ($posts->count())
 	<div class="card mb-3 text-center">
 		<img src="https://source.unsplash.com/1000x400?{{ $posts[0]->category->name }}" class="card-img-top" alt="...">
@@ -50,9 +60,7 @@
 	
   </div>
 </div>
-@else
-<p class="text-center fs-4">No posts found.</p>
-@endif
+
 <div class="container">
 	<div class="row">
 	@foreach( $posts->skip(1) as $post)
@@ -74,4 +82,7 @@
 		@endforeach
 	</div>
 </div>
+@else
+<p class="text-center fs-4">No posts found.</p>
+@endif
 @endsection

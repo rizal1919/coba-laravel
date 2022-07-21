@@ -15,10 +15,15 @@
       <li class="nav-item">
         <a class="nav-link {{ ($active === 'Posts') ? 'active' : '' }}" href="/blog">Posts</a>
       </li>
-	  <li class="nav-item">
+	    <li class="nav-item">
         <a class="nav-link {{ ($active === 'Category') ? 'active' : '' }}" href="/categories">Categories</a>
       </li>
     </ul>
   </div>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a href="/login" class="nav-link {{ ($active === 'Login') ? 'active' : '' }}"><i class="fa-solid fa-right-to-bracket mx-1"></i>Login</a>
+      </li>
+    </ul>
   </div>
 </nav>
